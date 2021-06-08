@@ -1,0 +1,38 @@
+{
+  "name": "@vendure/asset-server-plugin",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "watch": "tsc -p ./tsconfig.build.json --watch",
+    "build": "rimraf lib && tsc -p ./tsconfig.build.json && node build.js",
+    "lint": "tslint --fix --project ./",
+    "test": "jest --config ./jest.config.js",
+    "e2e": "jest --config ../../e2e-common/jest-config.js --runInBand --package=asset-server-plugin"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.8",
+    "@types/fs-extra": "^9.0.8",
+    "@types/node-fetch": "^2.5.8",
+    "@types/sharp": "^0.27.1",
+    "@vendure/common": "^1.0.0",
+    "@vendure/core": "^1.0.0",
+    "aws-sdk": "^2.856.0",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
+    "rimraf": "^3.0.2",
+    "typescript": "4.1.5"
+  },
+  "dependencies": {
+    "file-type": "^16.2.0",
+    "fs-extra": "^9.1.0",
+    "sharp": "0.28.0"
+  }
+}
